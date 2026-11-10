@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mateus Furuløkken — Interaksjonsdesigner &amp; UX designer</title>
+  <meta
+    name="description"
+    content="Mateus Furuløkken — Interaksjonsdesigner og UX designer med over 20 års erfaring innen interaksjonsdesign, universell utforming (WCAG), merkevarebygging og AI assistert produktutvikling."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css?v=21" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23252724'/><text y='.9em' x='50%' text-anchor='middle' font-size='60' font-family='sans-serif' font-weight='700' fill='%23eae6dd'>N</text></svg>" />
+</head>
+<body>
+  <!-- Tilgjengelighet: Hopp til innhold for tastaturbrukere (WCAG 2.4.1) -->
+  <a href="#heading-forside" class="skip-link">Hopp til hovedinnhold</a>
+
+  <!-- ========================================================================
+       STICKY HEADER (Globalt komponent)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#forside" class="brand-logo" data-nav-target="forside" aria-label="Neon Studio — Gå til forsiden">
+        <img
+          src="assets/images/neonstudio-logo-light.png"
+          alt="Neon Studio"
+          class="brand-logo__img"
+          width="156"
+          height="22"
+        />
+      </a>
+
+      <nav class="header-nav" aria-label="Hovedmeny">
+        <div class="nav-links">
+          <a href="#forside" class="nav-link" data-nav-target="forside" aria-current="page">Forside</a>
+          <a href="#prosjekter" class="nav-link" data-nav-target="prosjekter">Prosjekter</a>
+          <a href="#erfaring" class="nav-link" data-nav-target="erfaring">Erfaring</a>
+        </div>
+        <a href="#kontakt" class="btn btn--primary btn--sm" data-nav-target="kontakt">
+          Kontakt
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SIDE 1: FORSIDE (Home)
+       ======================================================================== -->
+  <main id="view-forside" class="view is-active" aria-labelledby="heading-forside">
+    <!-- 1. Hero-seksjon -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          <span class="hero-badge__dot" aria-hidden="true"></span>
+          <span>Tilgjengelig for oppdrag i Oslo og Bærum</span>
+        </div>
+
+        <h1 id="heading-forside" class="hero-title view-heading" tabindex="-1">
+          Intuitive løsninger gjennom innsikt, strategi og teknologi.
+        </h1>
+
+        <div class="hero-grid">
+          <div>
+            <p class="hero-lead">
+              Utdannet grafisk designer med over 20 års erfaring fra privat og offentlig sektor samt startups. Jeg hjelper virksomheter med brukersentrert interaksjonsdesign, universell utforming (WCAG), tydelige merkevarer og AI drevne prototyper som gir målbar verdi.
+            </p>
+            <div class="hero-actions">
+              <a href="#prosjekter" class="btn btn--primary" data-nav-target="prosjekter">
+                Se utvalgte prosjekter
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#erfaring" class="btn btn--secondary" data-nav-target="erfaring">
+                Min erfaring
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-meta-card" aria-label="Nøkkelprofil">
+            <div class="hero-meta-card__top">
+              <img
+                src="assets/images/mateus-portrett.png"
+                alt="Portrett av Mateus Furuløkken"
+                class="hero-meta-card__avatar"
+                width="52"
+                height="52"
+              />
+              <div>
+                <div class="hero-meta-card__name">Mateus Furuløkken</div>
+                <div class="hero-meta-card__role">Interaksjonsdesigner og UX designer · UX-sertifisert</div>
+              </div>
+            </div>
+            <p class="hero-meta-card__quote">
+              Fra brukerinnsikt og komplekse offentlige fellesløsninger til visuell identitet og AI assistert utvikling av MVPer.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Erfarings og oppdragsgiver-stripe (Inspirert av Bou & Marc Kuiper) -->
+    <div class="client-strip" aria-label="Utvalgte oppdragsgivere">
+      <div class="container client-strip__inner">
+        <span class="client-strip__label">Erfaring fra oppdrag hos</span>
+        <ul class="client-strip__list">
+          <li class="client-strip__item">Digitaliseringsdirektoratet</li>
+          <li class="client-strip__item">Skatteetaten</li>
+          <li class="client-strip__item">Statens vegvesen</li>
+          <li class="client-strip__item">Itc</li>
+          <li class="client-strip__item">Around</li>
+          <li class="client-strip__item">Gapper</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. Kjernekompetanse -->
+    <section class="section" aria-labelledby="services-heading">
+      <div class="container">
+        <span class="section-eyebrow">01 / Kjernekompetanse</span>
+        <div class="section-header">
+          <h2 id="services-heading" class="section-title">Kjernekompetanse</h2>
+          <p class="section-subtitle">
+            Bred erfaring fra alle faser av produkt og tjenesteutvikling — fra tidlig brukerinnsikt og universell utforming til ferdige løsninger og AI assistert prototyping.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Kort 1 -->
+          <article class="service-card">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">01</span>
+                <span class="service-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <rect x="3" y="4" width="18" height="16" rx="2" />
+                    <path d="M7 8h10M7 12h6" />
+                  </svg>
+                </span>
+              </div>
+              <h3 class="service-card__title" style="margin-top: 1.5rem;">Produktutvikling &amp; UX</h3>
+              <p class="service-card__desc">
+                Brukersentrert interaksjonsdesign, skalerbare designsystemer og universell utforming (WCAG). Kombinerer beste praksis i Figma med moderne AI assistert prototyping og koding med AI agenter for rask validering av MVPer.
+              </p>
+            </div>
+            <div class="service-card__tags">
+              <span class="tag-pill">Interaksjonsdesign</span>
+              <span class="tag-pill">Universell utforming</span>
+              <span class="tag-pill">AI assistert MVP</span>
+            </div>
+          </article>
+
+          <!-- Kort 2 -->
+          <article class="service-card">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">02</span>
+                <span class="service-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </span>
+              </div>
+              <h3 class="service-card__title" style="margin-top: 1.5rem;">Prosjekt og designledelse</h3>
+              <p class="service-card__desc">
+                Trygg ledelse av designprosesser i smidige, tverrfaglige team. Forener visuell identitet, innholdsdesign og teknisk gjennomføring slik at løsningene skaper varig verdi for både sluttbrukere og organisasjon.
+              </p>
+            </div>
+            <div class="service-card__tags">
+              <span class="tag-pill">Designledelse</span>
+              <span class="tag-pill">Visuell identitet</span>
+              <span class="tag-pill">Smidig metodikk</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Utvalgte prosjekter (Preview av 2 prosjekter) -->
+    <section class="section section--no-border" aria-labelledby="preview-projects-heading">
+      <div class="container">
+        <span class="section-eyebrow">02 / Portefølje</span>
+        <div class="section-header">
+          <div>
+            <h2 id="preview-projects-heading" class="section-title">Utvalgte prosjekter</h2>
+            <p class="section-subtitle" style="margin-top: 0.65rem;">
+              Et utvalg av digitale produkter, skalerbare plattformer og merkevarer formet fra tidlig idé til ferdig løsning.
+            </p>
+          </div>
+          <a href="#prosjekter" class="link-arrow" data-nav-target="prosjekter">
+            <span>Se alle prosjekter</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Preview Prosjekt 1: Around -->
+          <article
+            class="project-card"
+            data-project-id="around"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Around — Design og AI drevet utvikling av smart gruppechattjeneste"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/around-mobile.jpg"
+                alt="Around mobilapplikasjon for smart og trygg gruppekommunikasjon"
+                class="project-card__img"
+                width="1600"
+                height="1060"
+              />
+              <span class="project-card__badge">Produkt &amp; AI MVP</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Around</span>
+                <span>2025 – d.d.</span>
+              </div>
+              <h3 class="project-card__title">Konseptutvikling og AI drevet MVP for kommunikasjonsplattform</h3>
+              <p class="project-card__desc">
+                Utvikling av konsept, visuell identitet og UX/UI for en personvernvennlig gruppechattjeneste uten algoritmestøy. Prototypet i Figma Make og realisert som fungerende MVP ved hjelp av AI agenter i Antigravity.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Konseptutvikling</span>
+                  <span class="tag-pill">UX/UI</span>
+                  <span class="tag-pill">AI agenter</span>
+                </div>
+                <span class="project-card__trigger">Les case <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Preview Prosjekt 2: Gapper -->
+          <article
+            class="project-card"
+            data-project-id="gapper"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Gapper og Ultra Training digitale plattformer"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/gapper-desktop.jpg"
+                alt="Gapper — Bookingplattform for bedrifter"
+                class="project-card__img"
+                width="861"
+                height="567"
+              />
+              <span class="project-card__badge">Produktledelse &amp; UX</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Gapper &amp; Ultra Training Inc.</span>
+                <span>2020 – 2025</span>
+              </div>
+              <h3 class="project-card__title">Skalerbare plattformer for booking og personlig trening (web, mobil og TV)</h3>
+              <p class="project-card__desc">
+                Som designansvarlig ledet jeg utviklingen av brukerreiser, designsystemer og visuell identitet etter Double Diamond-metodikk. Løsningene ble kontinuerlig forbedret gjennom brukerinnsikt og tilbakemeldinger fra pilotkunder.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Designledelse</span>
+                  <span class="tag-pill">UX/UI</span>
+                  <span class="tag-pill">Double Diamond</span>
+                </div>
+                <span class="project-card__trigger">Les case <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SIDE 2: PROSJEKTER (Portefølje)
+       ======================================================================== -->
+  <main id="view-prosjekter" class="view" hidden aria-labelledby="heading-prosjekter">
+    <section class="section section--no-border">
+      <div class="container">
+        <span class="section-eyebrow">Portefølje · Utvalgte arbeider</span>
+        <div class="section-header">
+          <div>
+            <h1 id="heading-prosjekter" class="section-title view-heading" tabindex="-1">
+              Utvalgte prosjekter
+            </h1>
+            <p class="section-subtitle" style="margin-top: 0.85rem;">
+              Et utvalg prosjekter innen offentlige fellesløsninger, merkevarebygging og digitale produkter. Klikk på et prosjektkort for å se flere skjermbilder og detaljer.
+            </p>
+          </div>
+        </div>
+
+        <!-- Kategori-filter -->
+        <div class="projects-filter-bar" role="toolbar" aria-label="Filtrer prosjekter etter fagområde">
+          <div class="filter-pills">
+            <button type="button" class="filter-pill is-active" data-filter="alle" aria-pressed="true">
+              Alle prosjekter (6)
+            </button>
+            <button type="button" class="filter-pill" data-filter="offentlig" aria-pressed="false">
+              Offentlig sektor
+            </button>
+            <button type="button" class="filter-pill" data-filter="produkt" aria-pressed="false">
+              Produkt &amp; UX/UI
+            </button>
+            <button type="button" class="filter-pill" data-filter="merkevare" aria-pressed="false">
+              Merkevare &amp; identitet
+            </button>
+          </div>
+        </div>
+
+        <!-- Prosjekt-grid (2 kolonner på desktop, 1 på mobil) -->
+        <div id="portfolioGrid" class="projects-grid">
+          <!-- Kort 1: Digitaliseringsdirektoratet -->
+          <article
+            class="project-card"
+            data-category="offentlig produkt"
+            data-project-id="digdir"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Digitaliseringsdirektoratet"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/digdir-datanorge.jpg"
+                alt="Digitaliseringsdirektoratet — Felles datakatalog og data.norge.no"
+                class="project-card__img"
+                loading="lazy"
+                width="986"
+                height="654"
+              />
+              <span class="project-card__badge">Offentlig sektor</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Digitaliseringsdirektoratet (Digdir)</span>
+                <span>2023 – 2024</span>
+              </div>
+              <h2 class="project-card__title">Felles datakatalog &amp; Digital gravferdsmelding</h2>
+              <p class="project-card__desc">
+                Offentlige virksomheter trengte enklere verktøy for å dele datasett etter EU-standarder, og innbyggere trengte en skånsom digital gravferdsmelding. Gjennom innsikt, brukertesting og Digdirs designsystem leverte jeg en ny begrepskatalog i produksjon og mer forståelige Altinn-skjemaer.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Interaksjonsdesign</span>
+                  <span class="tag-pill">Digitalisering</span>
+                  <span class="tag-pill">UX/UI</span>
+                  <span class="tag-pill">Universell utforming</span>
+                </div>
+                <span class="project-card__trigger">Se detaljer <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kort 2: Around -->
+          <article
+            class="project-card"
+            data-category="produkt merkevare"
+            data-project-id="around"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Around kommunikasjonsplattform"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/around-laptop.jpg"
+                alt="Around — Kommunikasjonsplattform og nettside aroundroom.com"
+                class="project-card__img"
+                loading="lazy"
+                width="682"
+                height="466"
+              />
+              <span class="project-card__badge">Produkt &amp; AI MVP</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Around</span>
+                <span>2025 – d.d.</span>
+              </div>
+              <h2 class="project-card__title">Smart gruppechattjeneste fra konsept til AI bygget MVP</h2>
+              <p class="project-card__desc">
+                Utfordringen var å skape en sosial kommunikasjonsplattform fri for algoritmestøy og unødvendig datalagring. Utviklet konsept, visuell identitet, interaktive prototyper i Figma Make og en fungerende MVP med AI agenter i Antigravity som nå testes med svært positive brukerresponser.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Strategi</span>
+                  <span class="tag-pill">UX/UI</span>
+                  <span class="tag-pill">AI prototyping</span>
+                  <span class="tag-pill">Visuell identitet</span>
+                </div>
+                <span class="project-card__trigger">Se detaljer <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kort 3: Skatteetaten -->
+          <article
+            class="project-card"
+            data-category="offentlig produkt"
+            data-project-id="skatteetaten"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Skatteetaten redesign av intranettsider"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/skatteetaten-intranett.jpg"
+                alt="Skatteetaten — Kunnskaps og metodeportal på intranett"
+                class="project-card__img"
+                loading="lazy"
+                width="1024"
+                height="576"
+              />
+              <span class="project-card__badge">Offentlig sektor</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Skatteetaten</span>
+                <span>2025 – 2026</span>
+              </div>
+              <h2 class="project-card__title">Redesign og informasjonsarkitektur for Skatteetatens intranett</h2>
+              <p class="project-card__desc">
+                Komplekse interne kunnskapsområder gjorde det krevende for ansatte å finne riktig informasjon raskt. Gjennom brukerinnsikt, klarspråk og omstrukturering i SharePoint etter etatens designsystem forbedret jeg informasjonsstrukturen på 29 intranettsider med svært god mottakelse.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Interaksjonsdesign</span>
+                  <span class="tag-pill">Innholdsdesign</span>
+                  <span class="tag-pill">Digitalisering</span>
+                </div>
+                <span class="project-card__trigger">Se detaljer <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kort 4: Itc -->
+          <article
+            class="project-card"
+            data-category="merkevare produkt"
+            data-project-id="itc"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Itc visuell identitet og hjemmeside"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/itc-web.jpg"
+                alt="Itc — Ny visuell identitet og nettside vist på bærbar PC"
+                class="project-card__img"
+                loading="lazy"
+                width="837"
+                height="589"
+              />
+              <span class="project-card__badge">Merkevare &amp; web</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Itc AS</span>
+                <span>2022 – 2026</span>
+              </div>
+              <h2 class="project-card__title">Visuell identitet, ny hjemmeside og ansattopplevelse for konsulenthus</h2>
+              <p class="project-card__desc">
+                Basert på dybdeintervjuer med ansatte og analyse av selskapets kultur utviklet jeg en komplett ny merkevareidentitet, ny hjemmeside og nytt intranett. Resultatet ga selskapet et samlende visuelt uttrykk på tvers av digitale flater, malverk og nye kontorlokaler.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Strategi</span>
+                  <span class="tag-pill">Merkevarebygging</span>
+                  <span class="tag-pill">UX/UI</span>
+                </div>
+                <span class="project-card__trigger">Se detaljer <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kort 5: Statens vegvesen -->
+          <article
+            class="project-card"
+            data-category="offentlig merkevare"
+            data-project-id="vegvesen"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Statens vegvesen intern branding av skyplattform"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/vegvesen-logo.jpg"
+                alt="Statens vegvesen — Intern merkevarebygging for skyplattform"
+                class="project-card__img"
+                loading="lazy"
+                width="903"
+                height="678"
+              />
+              <span class="project-card__badge">Offentlig sektor</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Statens vegvesen</span>
+                <span>2025</span>
+              </div>
+              <h2 class="project-card__title">Intern merkevarebygging av skyplattform &amp; UU-skjemadesign</h2>
+              <p class="project-card__desc">
+                For å styrke kjennskapen til etatens interne skyplattform utviklet jeg logo, brand guidelines, malverk og illustrasjoner, samt Figma-prototyper for et brukervennlig registreringsskjema som ivaretar kravene til universell utforming.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Merkevarebygging</span>
+                  <span class="tag-pill">Skjemadesign</span>
+                  <span class="tag-pill">Universell utforming</span>
+                </div>
+                <span class="project-card__trigger">Se detaljer <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kort 6: Gapper & Ultra Training -->
+          <article
+            class="project-card"
+            data-category="produkt merkevare"
+            data-project-id="gapper"
+            tabindex="0"
+            role="button"
+            aria-label="Åpne case-studie: Gapper og Ultra Training digitale plattformer"
+          >
+            <div class="project-card__media">
+              <img
+                src="assets/images/gapper-desktop.jpg"
+                alt="Gapper — Bookingplattform for bedrifter"
+                class="project-card__img"
+                loading="lazy"
+                width="861"
+                height="567"
+              />
+              <span class="project-card__badge">Produktledelse &amp; UX</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Gapper &amp; Ultra Training Inc.</span>
+                <span>2020 – 2025</span>
+              </div>
+              <h2 class="project-card__title">Skalerbare plattformer for booking og personlig trening (web, mobil og TV)</h2>
+              <p class="project-card__desc">
+                Som designansvarlig ledet jeg utviklingen av brukerreiser, designsystemer og visuell identitet etter Double Diamond-metodikk. Løsningene ble kontinuerlig forbedret gjennom brukerinnsikt og tilbakemeldinger fra pilotkunder.
+              </p>
+              <div class="project-card__footer">
+                <div class="tag-list">
+                  <span class="tag-pill">Designledelse</span>
+                  <span class="tag-pill">UX/UI</span>
+                  <span class="tag-pill">Double Diamond</span>
+                </div>
+                <span class="project-card__trigger">Se detaljer <span aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SIDE 3: ERFARING (CV)
+       ======================================================================== -->
+  <!-- ========================================================================
+       SIDE 3: ERFARING & KOMPETANSE (Komplett CV med interaktive dropdowns)
+       ======================================================================== -->
+  <main id="view-erfaring" class="view" hidden aria-labelledby="heading-erfaring">
+    <!-- 1. Profil-intro -->
+    <section class="section section--no-border">
+      <div class="container">
+        <span class="section-eyebrow">CV &amp; bakgrunn</span>
+        <div class="section-header">
+          <div>
+            <h1 id="heading-erfaring" class="section-title view-heading" tabindex="-1">
+              Erfaring &amp; kompetanse
+            </h1>
+            <p class="section-subtitle" style="margin-top: 0.65rem;">
+              Utdannet grafisk designer med 20 års erfaring innen interaksjonsdesign, UX, merkevarebygging og AI assistert produktutvikling.
+            </p>
+          </div>
+        </div>
+
+        <div class="cv-hero-card">
+          <img
+            src="assets/images/mateus-portrett.png"
+            alt="Portrett av Mateus Furuløkken"
+            class="cv-portrait"
+            width="136"
+            height="136"
+          />
+          <div>
+            <div class="cv-intro__role">Interaksjonsdesigner · UX designer · Grafisk designer</div>
+            <h2 class="cv-intro__name">Mateus Furuløkken</h2>
+            <p class="cv-intro__bio">
+              Jeg er utdannet grafisk designer med 20 års erfaring fra privat og offentlig sektor og flere startups. De siste årene har jeg jobbet som interaksjonsdesigner og UX designer, og er konsulent i Itc.
+            </p>
+            <p class="cv-intro__bio">
+              Jeg har jobbet med produkt og tjenesteutvikling i alle faser, fra innsiktsarbeid og konseptutvikling til interaksjonsdesign, prototyping og brukertesting. Jeg bruker også AI assistert prototyping og koder løsninger med AI agenter, blant annet en MVP for tjenesten Around.
+            </p>
+            <p class="cv-intro__bio">
+              Jeg har vært i prosjekter hos Digitaliseringsdirektoratet, Statens vegvesen og Skatteetaten, der universell utforming og designsystemer har vært sentralt. Jeg passer for oppdrag som krever en designer som både kan finne brukernes behov, løse dem og bygge visuell identitet, og som er vant til å jobbe i tverrfaglige team.
+            </p>
+            <div class="cv-intro__meta">
+              <span><strong>E-post:</strong> <a href="mailto:mateus.furuloekken@gmail.com" style="color: inherit; text-decoration: underline;">mateus.furuloekken@gmail.com</a></span>
+              <span><strong>Lokasjon:</strong> Oslo</span>
+              <span><strong>Erfaring:</strong> 20 år</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toolbar med Åpne/Lukk alle -->
+        <div class="cv-toolbar">
+          <span class="cv-toolbar__hint">Klikk på seksjonene nedenfor for å folde ut og lese fullstendig CV:</span>
+          <button type="button" class="cv-toolbar__btn" id="toggleAllCvBtn" aria-expanded="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+            <span id="toggleAllCvBtnText">Åpne alle seksjoner</span>
+          </button>
+        </div>
+
+        <!-- DROPDOWNS (ACCORDIONS) -->
+        <div class="cv-accordions">
+
+          <!-- DROPDOWN 1: PROSJEKTERFARING (14 OPPDRAG) -->
+          <details class="cv-accordion" id="cv-acc-projects" open>
+            <summary class="cv-accordion__summary">
+              <div class="cv-accordion__title-wrap">
+                <span class="cv-accordion__num">01</span>
+                <h2 class="cv-accordion__title">Prosjekterfaring &amp; konsulentoppdrag</h2>
+                <span class="cv-accordion__badge">14 oppdrag</span>
+              </div>
+              <svg class="cv-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="cv-accordion__content">
+              <!-- Prosjekt 1: Itc Merkevarebygging -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">sep. 2025 – d.d.</span>
+                  <span class="cv-project-entry__role">Rolle: Community &amp; Branding Coordinator</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Itc — Merkevarebygging</h3>
+                <p class="cv-project-entry__desc">
+                  Jeg hadde ansvar for å styrke internkultur og arbeidsmiljø i konsulenthuset Itc gjennom aktiviteter og arrangementer.
+                </p>
+                <p class="cv-project-entry__desc">
+                  I tillegg jobbet jeg med visuell profil og kommunikasjon, forbedret kontormiljøet og vedlikeholdt intranettet.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Merkevarebygging</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Visuell identitet</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 2: Around -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2025 – d.d.</span>
+                  <span class="cv-project-entry__role">Rolle: Konseptutvikler og UX designer</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Around — Design og utvikling av smart gruppechattjeneste</h3>
+                <p class="cv-project-entry__desc">
+                  Jeg utviklet og designet konseptet Around. Figma Make ble brukt til å prototype tjenesten for alle flater med fokus på språk, mikrotekster, brukervennlighet og universell utforming. Hjemmesiden er designet og publisert med Figma Sites, der brukere kan sette seg opp på venteliste og lese mer om konseptet. Jeg har også utviklet visuell identitet. Språkbruken og fargene er viktige virkemidler for å skape den tilliten, roen og inkluderingen tjenesten skal representere. Det har også vært fokus på personvern, slik at det skal være trygt å bruke tjenesten og ikke noe unødvendig data lagres.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Jeg utviklet en MVP med AI agenter i Antigravity. Den er testet på barn fra 13 år, ungdom på videregående, foreldre, venner og kolleger, og tilbakemeldingene har vært positive. Tjenesten forbedres kontinuerlig basert på tilbakemeldingene. Tjenesten skal testes på flere brukere i forbindelse med lansering i App Store.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Antigravity</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Figma</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Visuell identitet</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Illustrator</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 3: Skatteetaten -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2025 – 2026</span>
+                  <span class="cv-project-entry__role">Rolle: Interaksjonsdesigner / innholdsdesigner</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Skatteetaten — Redesign av Skatteetatens intranettsider</h3>
+                <p class="cv-project-entry__desc">
+                  Jeg hadde ansvar for å hente inn og analysere brukernes behov og gjeldende rammebetingelser, og omsette dem til gode løsninger. Sammen med kompetanseansvarlig og endringsleder diskuterte jeg løsninger og løftet fram brukerbehovene. Jeg utarbeidet tekster, navigasjon og sider i SharePoint, og brukte etatens metoder og designsystem. Sammen med andre tok jeg beslutninger om hva som skulle brukertestes, og vurderte fortløpende nye og mer hensiktsmessige måter å løse oppgaver på.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Jeg forbedret informasjonsstrukturen på totalt 29 intranettsider. Brukerne opplevde sidene som tydelige og oversiktlige, med intuitiv og naturlig navigasjon og en informasjonsflyt som føltes naturlig. Løsningene fulgte Skatteetatens designsystem og kravene til universell utforming.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Designsystem</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Innholdsdesign</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Interaksjonsdesign</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>SharePoint</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 4: Itc ansattopplevelser -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2022 – 2026</span>
+                  <span class="cv-project-entry__role">Rolle: Designer</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Itc — Itc ansattopplevelser og merkevarebygging</h3>
+                <p class="cv-project-entry__desc">
+                  Jobbet med innsiktsarbeid som bestod av dybdeintervjuer med ansatte, analyse, visualiseringer av funn og Figmaskisser. Designet ny hjemmeside basert på innsikten samt ny visuell identitet som ble positivt mottatt av selskapet, kunder og konsulenter. Den visuelle identiteten bestod av ny logo, fonter, farger, PowerPoint, Word og Keynote-maler og e-postsignatur.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Vår 2025 jobbet jeg med en ny og brukervennlig intranettside der konsulenter enkelt finner informasjon de søker etter. Jeg utarbeidet innhold til sosiale medier og retningslinjer for hvordan logo og grafiske elementer skal brukes på ulike flater. Itc har flyttet til nye kontorlokaler og har også hatt behov for branding av lokalet som skilting, forslag på møteromsnavn, bruk av illustrasjoner og innhold på TV-skjermer.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Figma</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Innsiktsarbeid</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Visuell identitet</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Adobe Creative Cloud</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 5: Statens vegvesen -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2025 – apr. 2025</span>
+                  <span class="cv-project-entry__role">Rolle: Designer</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Statens vegvesen — Design av skyplattform</h3>
+                <p class="cv-project-entry__desc">
+                  Jeg var designer i Statens vegvesens skyetableringsteam, som skulle gjøre virksomheten klar til raskt å etablere nye tjenester på ny offentlig skyinfrastruktur. Prosjektet hadde forretningsmessige, organisatoriske og tekniske arbeidsstrømmer, og teamet trengte designkompetanse i dem alle.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Jeg leverte et bredt spekter av visuelle leveranser og interaksjonsdesign: logo, illustrasjoner, Teams-bakgrunner, forslag til nytt navn, PowerPoint og Word-maler og forslag til layout på nyhetsbrev. Jeg laget også skisser i Figma til et brukervennlig registreringsskjema som oppfyller kravene til universell utforming.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Figma</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Logodesign</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Universell utforming</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Illustrator</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 6: Gapper 2020-2025 -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2020 – 2025</span>
+                  <span class="cv-project-entry__role">Rolle: Interaksjonsdesigner / designansvarlig</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Gapper — Design av bookingplattform</h3>
+                <p class="cv-project-entry__desc">
+                  Jeg var designansvarlig for en bookingplattform og ledet designprosessene i teamet. Jeg jobbet med brukervennligheten basert på tilbakemeldinger fra pilotkunde og på brukerinnsikt og behovsanalyser, og utarbeidet personas. Skisser, flyt og prototyper laget jeg i Figma i tett samarbeid med utvikler og prosjektleder, med universell utforming i fokus. Designet ble overlevert til prosjektleder og utvikler.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Jeg utviklet også den visuelle identiteten: logo, fonter, fargepalett, kundepresentasjoner, PowerPoint og Keynote-maler, innhold til sosiale medier og trykksaker, og sørget for at teamet brukte den riktig. I tillegg bidro jeg til forretningsutvikling, strategi og markedsføring.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Figma</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Universell utforming</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Visuell identitet</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 7: Digdir Digital gravferdsmelding -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2023 – 2024</span>
+                  <span class="cv-project-entry__role">Rolle: Interaksjonsdesigner</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Digitaliseringsdirektoratet (Digdir) — Digital gravferdsmelding</h3>
+                <p class="cv-project-entry__desc">
+                  I team Digital gravferdsmelding jobbet jeg med forbedring av gravferdsmelding/skjema og innhold i Altinn for å øke brukervennligheten. Basert på en MVP utarbeidet jeg også skisser i Figma for en informasjonsside om gravferd for Statsforvalteren i Vestfold og Telemark.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Jeg lagde også prototyper for en digital gravferdsmelding og tilhørende skjema i Altinn. Her var det spesielt viktig å redusere den kognitive belastningen for mennesker i vanskelige situasjoner. I tillegg designet jeg trykksaker til messer.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Figma</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Prototyping</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Designsystem</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Universell utforming</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 8: Digdir Felles datakatalog -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2023 – 2024</span>
+                  <span class="cv-project-entry__role">Rolle: Interaksjonsdesigner</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Digitaliseringsdirektoratet (Digdir) — Felles datakatalog</h3>
+                <p class="cv-project-entry__desc">
+                  Digdir utviklet en tjeneste som bestod av bl. annet en virksomhetsintern begrepskatalog for Skatteetaten og Brønnøysundregistrene. Tjenesten måtte oppfylle krav til universell utforming og jeg designet dette ihht. Digdirs designsystem. Jobbet tett med Skatteetaten, Brønnøysundregistrene, utviklere og designere for å løse utfordringene på en effektiv måte.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Jobbet med forbedring av brukeropplevelsen på data.norge. Dette bestod av bl. annet av planlegging og gjennomføring av innsiktsarbeid og designskisser som la grunnlag for videre design og utvikling av nye løsninger. Registreringsskjemaene ble designet basert på EU sine krav for hvordan private og offentlige virksomheter deler data.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Designsystem</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Innsiktsarbeid</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Universell utforming</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Prototyping</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 9: Ultra Training -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2022 – 2023</span>
+                  <span class="cv-project-entry__role">Rolle: Interaksjonsdesigner / designansvarlig</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Ultra Training Inc. — Design og merkevarebygging treningsapp</h3>
+                <p class="cv-project-entry__desc">
+                  Jobbet som interaksjonsdesigner i et tverrfaglig team og bidro med forretningsutvikling og markedsføring. Jeg var ansvarlig for å designe brukergrensesnitt til mobil og TV-app.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Jeg utarbeidet en visuell identitet; logo, fonter, farger, kundepresentasjoner, t-skjorter og rollups, samt produksjon av innhold til sosiale medier som bilder, tekst og animasjoner.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Brukergrensesnitt</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Visuell identitet</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Prototyping</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 10: Gapper 2020-2022 -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2020 – 2022</span>
+                  <span class="cv-project-entry__role">Rolle: Designer / designansvarlig</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Gapper — Design og merkevarebygging bookingplattform</h3>
+                <p class="cv-project-entry__desc">
+                  Jobbet som designansvarlig, ledet designprosesser i teamet og sørget for at den visuelle identiteten som jeg lagde ble brukt riktig av teamet. Arbeidet bestod av kontinuerlig forbedring av tjenesten. Universell utforming og brukervennlighet var hele tiden i fokus. Skisser og prototyper ble laget i Figma.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Den visuelle identiteten bestod av bl. annet; logo, fonter, farger, kundepresentasjoner, PowerPoint og Keynote-maler, samt produksjon av innhold til sosiale medier. I tillegg bidro jeg med forretningsutvikling, strategi og markedsføring.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Figma</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Merkevarebygging</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Universell utforming</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Prototyping</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 11: Ipsi -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2021 – 2021</span>
+                  <span class="cv-project-entry__role">Rolle: Designer</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Ipsi — Konseptutvikling av elsparkesykkel app</h3>
+                <p class="cv-project-entry__desc">
+                  Jobbet med konseptutvikling, prototyping og skisser basert på innsikt og behovsanalyser med fokus på sluttbruker. Utforming og visualisering av logo, fontbruk, farger og presentasjonsmateriell.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Konseptutvikling</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Prototyping</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 12: Los & Co -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2019 – 2020</span>
+                  <span class="cv-project-entry__role">Rolle: Designer</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Los &amp; Co — Diverse design</h3>
+                <p class="cv-project-entry__desc">
+                  Jeg jobbet som designer hos Los &amp; Co med kunder som Innovasjon Norge, Apotek 1 og Hurtigruten.
+                </p>
+                <p class="cv-project-entry__desc">
+                  For Innovasjon Norge designet jeg annonser til trykk og digitale flater i tråd med brand guidelines. For Apotek 1 utviklet jeg lokale og regionale markedsaktiviteter for apotekene.
+                </p>
+                <p class="cv-project-entry__desc">
+                  For Hurtigruten bidro jeg i et team av designere og en prosjektleder som videreutviklet den globale designmanualen. Jeg lagde layout og endret illustrasjoner til kataloger på fransk, tysk og engelsk, i samarbeid med tekstforfatter, oversetter, art director og grafisk designer. Jeg designet også utsmykning av beltevogner på Svalbard og vindusdekor til Hurtigrutens kontorer i forbindelse med at et av skipene skulle til Oslo.
+                </p>
+              </article>
+
+              <!-- Prosjekt 13: Enklere Liv -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2016 – 2019</span>
+                  <span class="cv-project-entry__role">Rolle: Art Director</span>
+                </div>
+                <h3 class="cv-project-entry__heading">Enklere Liv — Branding / designansvarlig</h3>
+                <p class="cv-project-entry__desc">
+                  Ansvar for alt grafisk materiell i bedriften, bl. annet butikkplakater i 75 butikker i Norge og Sverige og design av kundeaviser. Utarbeidelse av alt kampanjemateriell i samarbeid med kategorisjefer, markedsdirektør og regionssjefer. Jobbet også tett med e-commerce og SoMe team. Lokal og regional markedsføring av butikker og kampanjetilbud i butikk, nett og aviser.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Ansvarlig for annonser i alle landets aviser samt ulike magasiner. Ansvarlig for digital signage til nasjonale og regionale kampanjer, reklame og annet innhold på digitale skjermer i butikk og kjøpesentre. Utarbeidelse av lifestyle-bilder og etterbehandling av disse. Branding av merker som Gaitline, Vendela Wear, Beurer og Tufte Wear i samarbeid med leverandør og reklamebyrå.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Art direction</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Markedsføring</span>
+                </div>
+              </article>
+
+              <!-- Prosjekt 14: CopyCat -->
+              <article class="cv-project-entry">
+                <div class="cv-project-entry__top">
+                  <span class="cv-project-entry__period">2006 – 2016</span>
+                  <span class="cv-project-entry__role">Rolle: Grafisk designer / digitaltrykker, avdelingsleder</span>
+                </div>
+                <h3 class="cv-project-entry__heading">CopyCat — Design, trykk &amp; avdelingsledelse</h3>
+                <p class="cv-project-entry__desc">
+                  Jobbet som grafisk designer og digitaltrykker med kundeansvar og rådgivning. Produksjon av trykte medier og klargjøring av filer til digitaltrykk og offsettrykk.
+                </p>
+                <p class="cv-project-entry__desc">
+                  Som avdelingsleder hadde jeg ansvar for budsjetter, prissetting av oppdrag, kunderådgivning, innkjøp, forretningsutvikling, vedlikehold av maskinpark og ansatte.
+                </p>
+                <div class="cv-project-entry__tags">
+                  <strong>Nøkkelord:</strong>
+                  <span>Digitaltrykk</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Kundeansvar</span>
+                  <span class="tag-sep" aria-hidden="true">·</span>
+                  <span>Avdelingsleder</span>
+                </div>
+              </article>
+            </div>
+          </details>
+
+          <!-- DROPDOWN 2: ARBEIDSERFARING / STILLINGER -->
+          <details class="cv-accordion" id="cv-acc-work">
+            <summary class="cv-accordion__summary">
+              <div class="cv-accordion__title-wrap">
+                <span class="cv-accordion__num">02</span>
+                <h2 class="cv-accordion__title">Arbeidserfaring &amp; stillinger</h2>
+                <span class="cv-accordion__badge">7 ansettelser</span>
+              </div>
+              <svg class="cv-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="cv-accordion__content">
+              <div class="cv-data-list">
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">feb. 2022 – d.d.</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Designer / interaksjonsdesigner / konsulent</span>
+                    <span class="cv-data-row__subtitle">Itc AS</span>
+                  </div>
+                  <span class="cv-data-row__note">Konsulentvirksomhet</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">apr. 2020 – d.d.</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Designer</span>
+                    <span class="cv-data-row__subtitle">Freelance / Egen virksomhet</span>
+                  </div>
+                  <span class="cv-data-row__note">Startups &amp; rådgivning</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">2019 – 2020</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Designer</span>
+                    <span class="cv-data-row__subtitle">Los &amp; Co</span>
+                  </div>
+                  <span class="cv-data-row__note">Kommunikasjonsbyrå</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">2016 – 2019</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Art Director</span>
+                    <span class="cv-data-row__subtitle">Enklere Liv</span>
+                  </div>
+                  <span class="cv-data-row__note">Retail &amp; merkevare</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">2006 – 2016</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Grafisk designer / avdelingsleder / digitaltrykker</span>
+                    <span class="cv-data-row__subtitle">CopyCat AS</span>
+                  </div>
+                  <span class="cv-data-row__note">Grafisk produksjon &amp; ledelse</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">2005 – 2006</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Grafisk designer</span>
+                    <span class="cv-data-row__subtitle">Pure Vision Multimedia</span>
+                  </div>
+                  <span class="cv-data-row__note">Digital design</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">2003 – 2005</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Trainee</span>
+                    <span class="cv-data-row__subtitle">Panorama Design</span>
+                  </div>
+                  <span class="cv-data-row__note">Designbyrå</span>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- DROPDOWN 3: UTDANNING -->
+          <details class="cv-accordion" id="cv-acc-education">
+            <summary class="cv-accordion__summary">
+              <div class="cv-accordion__title-wrap">
+                <span class="cv-accordion__num">03</span>
+                <h2 class="cv-accordion__title">Utdanning</h2>
+                <span class="cv-accordion__badge">3 utdannelser</span>
+              </div>
+              <svg class="cv-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="cv-accordion__content">
+              <div class="cv-data-list">
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">2011 – 2011</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Prosjektledelse</span>
+                    <span class="cv-data-row__subtitle">NKI</span>
+                  </div>
+                  <span class="cv-data-row__note">Videreutdanning</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">2001 – 2003</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Grafisk design</span>
+                    <span class="cv-data-row__subtitle">Høyskolen Kristiania (tidligere MI)</span>
+                  </div>
+                  <span class="cv-data-row__note">2-årig fagutdanning</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">1999 – 2000</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Markedskommunikasjon</span>
+                    <span class="cv-data-row__subtitle">Handelshøyskolen BI</span>
+                  </div>
+                  <span class="cv-data-row__note">1-årig fagstudium</span>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- DROPDOWN 4: KURS OG SERTIFISERINGER -->
+          <details class="cv-accordion" id="cv-acc-courses">
+            <summary class="cv-accordion__summary">
+              <div class="cv-accordion__title-wrap">
+                <span class="cv-accordion__num">04</span>
+                <h2 class="cv-accordion__title">Kurs og sertifiseringer</h2>
+                <span class="cv-accordion__badge">8 sertifiseringer</span>
+              </div>
+              <svg class="cv-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="cv-accordion__content">
+              <div class="cv-data-list">
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">okt. 2026</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Kurs i workshopledelse</span>
+                    <span class="cv-data-row__subtitle">Fasilitering og ledelse av designprosesser</span>
+                  </div>
+                  <span class="cv-data-row__note">Ledelse</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">sep. 2025</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Master Digital Product Design: UX Research &amp; UI Design</span>
+                    <span class="cv-data-row__subtitle">Brukertesting, informasjonsarkitektur &amp; avansert UI</span>
+                  </div>
+                  <span class="cv-data-row__note">UX / UI</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">aug. 2025</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Design rules: Principles + Practices for Great UI Design</span>
+                    <span class="cv-data-row__subtitle">Prinsipper og beste praksis for førsteklasses brukergrensesnitt</span>
+                  </div>
+                  <span class="cv-data-row__note">UI Design</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">juni 2025</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">The Complete Product Management Fundamentals Course</span>
+                    <span class="cv-data-row__subtitle">Produktledelse, produktstrategi og smidig verdiskaping</span>
+                  </div>
+                  <span class="cv-data-row__note">Produkt</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">juni 2025</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Product Management: Mastering Product Roadmaps</span>
+                    <span class="cv-data-row__subtitle">Målrettet roadmap-utvikling og prioritering</span>
+                  </div>
+                  <span class="cv-data-row__note">Produkt</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">mai 2025</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Product Management 101</span>
+                    <span class="cv-data-row__subtitle">Grunnleggende produktforståelse og teamledelse</span>
+                  </div>
+                  <span class="cv-data-row__note">Produkt</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">mai 2022</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Certificate in User Experience (UX)</span>
+                    <span class="cv-data-row__subtitle">Nielsen Norman Group (NN/g)</span>
+                  </div>
+                  <span class="cv-data-row__note">Internasjonal UX-sertifisering</span>
+                </div>
+
+                <div class="cv-data-row">
+                  <span class="cv-data-row__date">mars 2022</span>
+                  <div class="cv-data-row__main">
+                    <span class="cv-data-row__title">Universell utforming av digitale løsninger</span>
+                    <span class="cv-data-row__subtitle">WCAG-etterlevelse, tilgjengelighet og lovkrav</span>
+                  </div>
+                  <span class="cv-data-row__note">WCAG / UU</span>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- DROPDOWN 5: KOMPETANSER, VERKTØY & SPRÅK -->
+          <details class="cv-accordion" id="cv-acc-skills">
+            <summary class="cv-accordion__summary">
+              <div class="cv-accordion__title-wrap">
+                <span class="cv-accordion__num">05</span>
+                <h2 class="cv-accordion__title">Kompetanser, verktøy &amp; språk</h2>
+                <span class="cv-accordion__badge">Full oversikt</span>
+              </div>
+              <svg class="cv-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="cv-accordion__content">
+              <div class="cv-skills-grid">
+                <!-- Kjernekompetanser -->
+                <div class="cv-skills-card">
+                  <h3 class="cv-skills-card__title">Kompetanser</h3>
+                  <div class="cv-skills-card__tags">
+                    <span class="cv-skills-chip">Art direction</span>
+                    <span class="cv-skills-chip">Grafisk design</span>
+                    <span class="cv-skills-chip">Interaksjonsdesign</span>
+                    <span class="cv-skills-chip">UX design</span>
+                    <span class="cv-skills-chip">AI assistert prototyping &amp; koding med AI agenter</span>
+                    <span class="cv-skills-chip">Brukergrensesnitt</span>
+                    <span class="cv-skills-chip">Brukeropplevelse</span>
+                    <span class="cv-skills-chip">Brukerreiser</span>
+                    <span class="cv-skills-chip">Digitaltrykk</span>
+                    <span class="cv-skills-chip">Figma Make</span>
+                    <span class="cv-skills-chip">Figma Sites</span>
+                    <span class="cv-skills-chip">Innsiktsarbeid</span>
+                    <span class="cv-skills-chip">Konseptutvikling</span>
+                    <span class="cv-skills-chip">Logodesign</span>
+                    <span class="cv-skills-chip">Markedsføring</span>
+                    <span class="cv-skills-chip">Merkevarebygging</span>
+                    <span class="cv-skills-chip">MVP utvikling</span>
+                    <span class="cv-skills-chip">Tverrfaglig samarbeid</span>
+                    <span class="cv-skills-chip">UI</span>
+                    <span class="cv-skills-chip">Universell utforming</span>
+                    <span class="cv-skills-chip">Visuell identitet</span>
+                  </div>
+                </div>
+
+                <!-- Verktøy & Språk -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                  <div class="cv-skills-card">
+                    <h3 class="cv-skills-card__title">Verktøy og teknologier</h3>
+                    <div class="cv-skills-card__tags">
+                      <span class="cv-skills-chip">Adobe programmer</span>
+                      <span class="cv-skills-chip">Antigravity (AI agenter)</span>
+                      <span class="cv-skills-chip">Figma</span>
+                      <span class="cv-skills-chip">Miro</span>
+                      <span class="cv-skills-chip">Slack</span>
+                      <span class="cv-skills-chip">Trello</span>
+                      <span class="cv-skills-chip">SharePoint</span>
+                      <span class="cv-skills-chip">Illustrator</span>
+                    </div>
+                  </div>
+
+                  <div class="cv-skills-card">
+                    <h3 class="cv-skills-card__title">Språk</h3>
+                    <div class="cv-data-list">
+                      <div class="cv-data-row" style="grid-template-columns: 120px 1fr; padding-block: 0.65rem;">
+                        <span class="cv-data-row__date" style="color: var(--text-primary);">Norsk</span>
+                        <span class="cv-data-row__subtitle">Flytende muntlig og skriftlig</span>
+                      </div>
+                      <div class="cv-data-row" style="grid-template-columns: 120px 1fr; padding-block: 0.65rem;">
+                        <span class="cv-data-row__date" style="color: var(--text-primary);">Engelsk</span>
+                        <span class="cv-data-row__subtitle">Bra muntlig og god leseforståelse</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SIDE: PROSJEKT CASE-STUDIE (Full bredde, egen side)
+       ======================================================================== -->
+  <main id="view-prosjekt" class="view" hidden aria-labelledby="projectDetailTitle">
+    <article class="project-detail-page">
+      <!-- Tilbakeknapp -->
+      <nav class="project-detail-topbar" aria-label="Navigasjon">
+        <div class="container">
+          <a href="#prosjekter" class="back-link" data-nav-target="prosjekter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            <span>Tilbake til alle prosjekter</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Prosjekt-hero i full bredde -->
+      <header class="section section--no-border project-detail-hero">
+        <div class="container">
+          <div id="projectDetailMetaPill" class="project-meta-pill"></div>
+          <h1 id="projectDetailTitle" class="project-detail-title view-heading" tabindex="-1"></h1>
+          <p id="projectDetailLead" class="project-detail-lead"></p>
+
+          <!-- 4-kolonners metadata-stripe i full bredde -->
+          <div class="project-meta-grid">
+            <div class="project-meta-item">
+              <span class="project-meta-label">Oppdragsgiver</span>
+              <span id="projectDetailClient" class="project-meta-value"></span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Tidsrom</span>
+              <span id="projectDetailYear" class="project-meta-value"></span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Rolle</span>
+              <span id="projectDetailRole" class="project-meta-value"></span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Fagområder</span>
+              <div id="projectDetailTags" class="project-meta-value project-meta-tags"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Stort bildegalleri i full bredde -->
+      <section class="section section--no-border project-gallery-section" aria-label="Prosjektbilder og skjermer">
+        <div class="container">
+          <span class="section-eyebrow">Visuell oversikt</span>
+          <div id="projectDetailGallery" class="project-full-gallery"></div>
+        </div>
+      </section>
+
+      <!-- Innsikt & Effekt: Vertikalt redaksjonelt oppsett uten kort -->
+      <section class="section section--no-border project-narrative-section" aria-label="Prosjektgjennomføring">
+        <div class="container">
+          <span class="section-eyebrow">Innsikt &amp; effekt</span>
+
+          <div class="project-narrative-list">
+            <!-- 01 Utfordring -->
+            <article class="narrative-block">
+              <div class="narrative-block__header">
+                <span class="narrative-block__num">01</span>
+                <h2 class="narrative-block__title">Utfordring</h2>
+              </div>
+              <div class="narrative-block__content">
+                <p id="projectDetailChallenge" class="narrative-block__text"></p>
+              </div>
+            </article>
+
+            <!-- 02 Løsning & Prosess -->
+            <article class="narrative-block">
+              <div class="narrative-block__header">
+                <span class="narrative-block__num">02</span>
+                <h2 class="narrative-block__title">Løsning &amp; prosess</h2>
+              </div>
+              <div class="narrative-block__content">
+                <p id="projectDetailSolution" class="narrative-block__text"></p>
+              </div>
+            </article>
+
+            <!-- 03 Resultat & Verdi -->
+            <article class="narrative-block">
+              <div class="narrative-block__header">
+                <span class="narrative-block__num">03</span>
+                <h2 class="narrative-block__title">Resultat &amp; verdi</h2>
+              </div>
+              <div class="narrative-block__content">
+                <p id="projectDetailResult" class="narrative-block__text"></p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sentrale leveranser i full bredde -->
+      <section class="section section--no-border project-deliverables-section" aria-label="Sentrale leveranser">
+        <div class="container">
+          <div class="project-deliverables-box">
+            <div class="project-deliverables-box__header">
+              <span class="section-eyebrow" style="margin-bottom: 0;">Ansvarsområde</span>
+              <h3 class="section-title" style="font-size: clamp(1.4rem, 2.2vw, 1.85rem);">Sentrale leveranser i oppdraget</h3>
+            </div>
+            <ul id="projectDetailDeliverables" class="project-deliverables-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontakt-banner -->
+      <section class="section section--no-border project-bottom-nav-section">
+        <div class="container">
+          <div class="project-cta-banner">
+            <div>
+              <h3 class="project-cta-title">Trenger teamet ditt en erfaren interaksjonsdesigner?</h3>
+              <p class="project-cta-desc">Ta gjerne kontakt for en uforpliktende prat om hvordan jeg kan bidra i prosjektet.</p>
+            </div>
+            <a href="#kontakt" class="btn btn--primary" data-nav-target="kontakt">
+              Ta kontakt
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- ========================================================================
+       SIDE: KONTAKT (Full bredde, egen side)
+       ======================================================================== -->
+  <main id="view-kontakt" class="view" hidden aria-labelledby="heading-kontakt">
+    <section class="section section--no-border">
+      <div class="container" style="max-width: 1040px;">
+        <div class="hero-badge" style="margin-bottom: 1.25rem;">
+          <span class="hero-badge__dot" aria-hidden="true"></span>
+          <span>Tilgjengelig for oppdrag i Oslo og Bærum eller hybrid</span>
+        </div>
+
+        <div class="section-header" style="margin-bottom: 2.75rem;">
+          <div>
+            <h1 id="heading-kontakt" class="section-title view-heading" tabindex="-1">
+              Ta kontakt for en uforpliktende prat
+            </h1>
+            <p class="section-subtitle" style="margin-top: 0.85rem; max-width: 680px;">
+              Er du på jakt etter en erfaren interaksjonsdesigner eller UX designer til teamet? Ta gjerne kontakt direkte via kanalene nedenfor:
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-methods-grid">
+          <!-- Kort 1: E-post -->
+          <article class="contact-card">
+            <div class="contact-card__top">
+              <div class="contact-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                </svg>
+              </div>
+              <a href="mailto:mateus.furuloekken@gmail.com" class="contact-card__direct-link">
+                <span>Send e-post</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="contact-card__body">
+              <span class="contact-card__label">E-post</span>
+              <div class="contact-card__val-row">
+                <span class="contact-card__val">mateus.furuloekken@gmail.com</span>
+                <button
+                  type="button"
+                  class="contact-card__copy-btn"
+                  id="copyEmailBtn"
+                  data-copy-val="mateus.furuloekken@gmail.com"
+                  aria-label="Kopier e-postadresse"
+                >
+                  <svg class="copy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <svg class="check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" hidden>
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span class="copy-btn-text">Kopier</span>
+                </button>
+              </div>
+              <p class="contact-card__hint">Send en direkte e-post eller kopier adressen til din e-postleverandør.</p>
+              <span class="sr-only" aria-live="polite" id="copyEmailFeedback"></span>
+            </div>
+          </article>
+
+          <!-- Kort 2: LinkedIn -->
+          <article class="contact-card">
+            <div class="contact-card__top">
+              <div class="contact-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <a href="https://www.linkedin.com/in/mateusf/" target="_blank" rel="noopener noreferrer" class="contact-card__direct-link">
+                <span>Åpne profil</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="contact-card__body">
+              <span class="contact-card__label">LinkedIn</span>
+              <div class="contact-card__val-row">
+                <span class="contact-card__val">linkedin.com/in/mateusf</span>
+              </div>
+              <p class="contact-card__hint">Koble til og se anbefalinger fra tidligere oppdragsgivere.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER (Nederst på alle sider)
+       ======================================================================== -->
+  <footer id="kontakt-footer" class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#forside" class="brand-logo" data-nav-target="forside" aria-label="Neon Studio — Til forsiden">
+            <img
+              src="assets/images/neonstudio-logo-light.png"
+              alt="Neon Studio"
+              class="brand-logo__img"
+              width="148"
+              height="21"
+            />
+          </a>
+          <p class="footer-tagline">
+            Interaksjonsdesign og digitale løsninger
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:mateus.furuloekken@gmail.com" class="footer-contact-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M3 7l9 6 9-6" />
+            </svg>
+            <span>mateus.furuloekken@gmail.com</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/mateusf/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-contact-pill"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a
+            href="https://www.behance.net/mateusfurulokken"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-contact-pill"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M3 7h6a3 3 0 010 6H3V7zm0 6h6.5a3 3 0 010 6H3v-6zM14 9h6M17 12a3.5 3.5 0 100 7 3.5 3.5 0 003-1.7" />
+            </svg>
+            <span>Behance</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Mateus Furuløkken · Neon Studio</span>
+        <div class="footer-bottom__nav">
+          <button type="button" data-nav-target="forside">Forside</button>
+          <button type="button" data-nav-target="prosjekter">Prosjekter</button>
+          <button type="button" data-nav-target="erfaring">Erfaring</button>
+          <button type="button" data-nav-target="kontakt">Kontakt</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js?v=18"></script>
+</body>
+</html>
+
