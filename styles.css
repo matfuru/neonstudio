@@ -1951,24 +1951,52 @@ h1,
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE BREAKPOINTS (Tablet: <= 980px)
    ========================================================================== */
 
 @media (max-width: 980px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .hero-meta-card {
+    max-width: 600px;
+    margin-top: 0.5rem;
   }
 
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
   }
 
+  .client-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .client-strip__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 0.85rem;
+  }
+
+  .client-strip__item {
+    font-size: 0.88rem;
+    padding: 0.4rem 0.85rem;
+    background-color: rgb(86 88 82 / 0.18);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    color: var(--text-secondary);
+  }
+
   .cv-hero-card {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .timeline-item {
@@ -2006,22 +2034,209 @@ h1,
   }
 }
 
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Mobile: <= 640px)
+   ========================================================================== */
+
 @media (max-width: 640px) {
   :root {
-    --header-height: 70px;
+    --header-height: 64px;
+  }
+
+  .container {
+    padding-inline: 1.15rem;
+  }
+
+  .site-header {
+    height: 64px;
+  }
+
+  .header-inner {
+    gap: 0.5rem;
   }
 
   .brand-logo__img {
-    height: 18px;
+    height: 17px;
+    width: auto;
+  }
+
+  .header-nav {
+    gap: 0.4rem;
+  }
+
+  .nav-links {
+    gap: 0.15rem;
   }
 
   .nav-link {
-    padding: 0.4rem 0.5rem;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.82rem;
+  }
+
+  .header-nav .btn--sm {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    min-height: 36px;
+  }
+
+  /* Hero-seksjon på mobil */
+  .hero {
+    padding-top: 1.75rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.25rem;
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 7.5vw, 2.35rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-lead {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Knapper i hero stables ryddig i full bredde */
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    font-size: 0.94rem;
+  }
+
+  /* Profilkort under hero */
+  .hero-meta-card {
+    padding: 1.25rem;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
+  }
+
+  .hero-meta-card__top {
+    gap: 0.85rem;
+  }
+
+  .hero-meta-card__avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-meta-card__name {
+    font-size: 1.05rem;
+  }
+
+  .hero-meta-card__role {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .hero-meta-card__quote {
     font-size: 0.88rem;
+    line-height: 1.5;
+    padding-top: 0.65rem;
+  }
+
+  /* Oppdragsgiver-stripe */
+  .client-strip {
+    padding-block: 1.35rem;
+  }
+
+  .client-strip__label {
+    font-size: 0.72rem;
+  }
+
+  .client-strip__list {
+    gap: 0.5rem 0.5rem;
+  }
+
+  .client-strip__item {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* Seksjonsoverskrifter */
+  .section-title {
+    font-size: clamp(1.65rem, 6vw, 2.15rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* CV & Accordions */
+  .cv-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .cv-toolbar__btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .cv-accordion__summary {
+    padding: 1.1rem 1.15rem;
+    min-height: 56px;
+    gap: 0.75rem;
+  }
+
+  .cv-accordion__title {
+    font-size: 1.15rem;
+  }
+
+  .cv-accordion__content {
+    padding: 0 1.15rem 1.5rem 1.15rem;
+    padding-top: 1.25rem;
+  }
+
+  /* Prosjektkort på mobil */
+  .project-card__body {
+    padding: 1.25rem;
+  }
+
+  .project-card__title {
+    font-size: 1.25rem;
+  }
+
+  .project-card__desc {
+    font-size: 0.92rem;
   }
 
   .project-meta-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Filter-bar for prosjekter */
+  .filter-pills {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+  }
+
+  .filter-pill {
+    flex-shrink: 0;
+    min-height: 40px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.82rem;
   }
 }
 
