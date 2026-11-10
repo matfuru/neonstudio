@@ -277,6 +277,228 @@ h1,
 }
 
 /* ==========================================================================
+   HAMBURGER MENY & MOBIL DRAWER (WCAG 2.1 & 2.2)
+   ========================================================================== */
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background-color: rgb(86 88 82 / 0.25);
+  border-color: var(--text-muted);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+.menu-toggle__box {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-toggle__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobilmeny overlay & drawer */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile-menu[hidden] {
+  display: none;
+}
+
+.mobile-menu__backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(37 39 36 / 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 0.25s ease;
+}
+
+.mobile-menu__panel {
+  position: relative;
+  z-index: 101;
+  width: min(88vw, 360px);
+  height: 100%;
+  background-color: var(--bg-main);
+  border-left: 1px solid var(--border-color);
+  padding: 1.5rem 1.25rem 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  box-shadow: var(--shadow-elevated);
+  animation: slideInRight 0.3s var(--ease-out-expo);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.mobile-menu__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-menu__close:hover {
+  background-color: rgb(86 88 82 / 0.25);
+  border-color: var(--text-muted);
+}
+
+.mobile-menu__close:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-block: auto;
+  padding-block: 1.75rem;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background-color: rgb(86 88 82 / 0.14);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  min-height: 52px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item:focus-visible {
+  background-color: rgb(86 88 82 / 0.35);
+  border-color: var(--text-muted);
+  transform: translateX(4px);
+}
+
+.mobile-nav-item:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+.mobile-nav-item[aria-current="page"] {
+  border-color: var(--text-primary);
+  background-color: rgb(86 88 82 / 0.35);
+}
+
+.mobile-nav-item__num {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.mobile-nav-item__text {
+  flex: 1;
+}
+
+.mobile-nav-item__arrow {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav-item:hover .mobile-nav-item__arrow {
+  color: var(--text-primary);
+  transform: translateX(3px);
+}
+
+.mobile-menu__footer {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ==========================================================================
    BUTTONS & INTERACTIVE LINKS
    ========================================================================== */
 
@@ -2035,6 +2257,20 @@ h1,
 }
 
 /* ==========================================================================
+   TABLET PORTRAIT & MOBIL NAV (<= 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+}
+
+/* ==========================================================================
    RESPONSIVE BREAKPOINTS (Mobile: <= 640px)
    ========================================================================== */
 
@@ -2056,27 +2292,8 @@ h1,
   }
 
   .brand-logo__img {
-    height: 17px;
+    height: 18px;
     width: auto;
-  }
-
-  .header-nav {
-    gap: 0.4rem;
-  }
-
-  .nav-links {
-    gap: 0.15rem;
-  }
-
-  .nav-link {
-    padding: 0.35rem 0.45rem;
-    font-size: 0.82rem;
-  }
-
-  .header-nav .btn--sm {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.8rem;
-    min-height: 36px;
   }
 
   /* Hero-seksjon på mobil */

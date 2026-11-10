@@ -294,7 +294,7 @@ function applyViewDOM(route) {
   // Header active navigation indicator
   document.querySelectorAll('[data-nav-target]').forEach((link) => {
     const target = link.getAttribute('data-nav-target');
-    if (link.classList.contains('nav-link')) {
+    if (link.classList.contains('nav-link') || link.classList.contains('mobile-nav-item')) {
       const isCurrent =
         target === activeViewId ||
         (activeViewId === 'prosjekt' && target === 'prosjekter');
@@ -381,6 +381,57 @@ function filterProjects(category) {
    -------------------------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobilmeny (Hamburger) logikk med WCAG-fokus og tastaturnavigasjon
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
+  const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+  function openMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.hidden = false;
+    menuToggle?.setAttribute('aria-expanded', 'true');
+    menuToggle?.setAttribute('aria-label', 'Lukk meny');
+    document.body.classList.add('menu-open');
+    setTimeout(() => {
+      mobileMenuClose?.focus();
+    }, 50);
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu || mobileMenu.hidden) return;
+    mobileMenu.hidden = true;
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Åpne navigasjonsmeny');
+    document.body.classList.remove('menu-open');
+    menuToggle?.focus();
+  }
+
+  menuToggle?.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+
+  mobileMenuClose?.addEventListener('click', closeMobileMenu);
+  mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileMenu && !mobileMenu.hidden) {
+      closeMobileMenu();
+    }
+  });
+
+  mobileNavItems.forEach((link) => {
+    link.addEventListener('click', () => {
+      closeMobileMenu();
+    });
+  });
+
   // Tilgjengelighet: Skip-link fokuserer aktiv sides overskrift
   const skipLink = document.querySelector('.skip-link');
   skipLink?.addEventListener('click', (e) => {

@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css?v=22" />
+  <link rel="stylesheet" href="styles.css?v=23" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23252724'/><text y='.9em' x='50%' text-anchor='middle' font-size='60' font-family='sans-serif' font-weight='700' fill='%23eae6dd'>N</text></svg>" />
 </head>
 <body>
@@ -36,6 +36,7 @@
         />
       </a>
 
+      <!-- Desktop navigasjon -->
       <nav class="header-nav" aria-label="Hovedmeny">
         <div class="nav-links">
           <a href="#forside" class="nav-link" data-nav-target="forside" aria-current="page">Forside</a>
@@ -46,8 +47,76 @@
           Kontakt
         </a>
       </nav>
+
+      <!-- Mobil hamburgermeny-knapp (WCAG 2.2 touch-target >= 44x44px) -->
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Åpne navigasjonsmeny"
+      >
+        <span class="menu-toggle__box" aria-hidden="true">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </span>
+      </button>
     </div>
   </header>
+
+  <!-- Fullskjerms mobilmeny overlay & drawer (WCAG-tilgjengelig) -->
+  <div id="mobileMenu" class="mobile-menu" hidden aria-modal="true" role="dialog" aria-label="Hovedmeny for mobil">
+    <div class="mobile-menu__backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__label">Navigasjon</span>
+        <button type="button" class="mobile-menu__close" id="mobileMenuClose" aria-label="Lukk meny">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-menu__nav" aria-label="Mobil navigasjonslenker">
+        <a href="#forside" class="mobile-nav-item" data-nav-target="forside" aria-current="page">
+          <span class="mobile-nav-item__num">01</span>
+          <span class="mobile-nav-item__text">Forside</span>
+          <span class="mobile-nav-item__arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#prosjekter" class="mobile-nav-item" data-nav-target="prosjekter">
+          <span class="mobile-nav-item__num">02</span>
+          <span class="mobile-nav-item__text">Prosjekter</span>
+          <span class="mobile-nav-item__arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#erfaring" class="mobile-nav-item" data-nav-target="erfaring">
+          <span class="mobile-nav-item__num">03</span>
+          <span class="mobile-nav-item__text">Erfaring (CV)</span>
+          <span class="mobile-nav-item__arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#kontakt" class="mobile-nav-item" data-nav-target="kontakt">
+          <span class="mobile-nav-item__num">04</span>
+          <span class="mobile-nav-item__text">Kontakt</span>
+          <span class="mobile-nav-item__arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <div class="mobile-menu__footer">
+        <div class="hero-badge" style="margin-bottom: 0.85rem; width: 100%; justify-content: center;">
+          <span class="hero-badge__dot" aria-hidden="true"></span>
+          <span>Tilgjengelig for oppdrag i Oslo &amp; Bærum</span>
+        </div>
+        <a href="mailto:mateus.furuloekken@gmail.com" class="btn btn--primary" style="width: 100%; justify-content: center; min-height: 48px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="M3 7l9 6 9-6" />
+          </svg>
+          <span>Send e-post direkte</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================================
        SIDE 1: FORSIDE (Home)
@@ -1551,7 +1620,7 @@
     </div>
   </footer>
 
-  <script src="app.js?v=19"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>
 
