@@ -2261,6 +2261,10 @@ body.menu-open {
    ========================================================================== */
 
 @media (max-width: 768px) {
+  .site-header {
+    border-bottom: none;
+  }
+
   .header-nav {
     display: none !important;
   }
