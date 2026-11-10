@@ -578,17 +578,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // CV Accordions — Åpne alle / Lukk alle
   const toggleAllCvBtn = document.getElementById('toggleAllCvBtn');
   const toggleAllCvText = document.getElementById('toggleAllCvBtnText');
-  const cvAccordions = document.querySelectorAll('.cv-accordion');
+  const cvAccordions = Array.from(document.querySelectorAll('.cv-accordion'));
 
-  toggleAllCvBtn?.addEventListener('click', () => {
-    const anyClosed = Array.from(cvAccordions).some((acc) => !acc.open);
-    cvAccordions.forEach((acc) => {
-      acc.open = anyClosed;
-    });
+  function updateToggleAllBtnState() {
+    if (!toggleAllCvBtn || cvAccordions.length === 0) return;
+    const allOpen = cvAccordions.every((acc) => acc.open);
     if (toggleAllCvText) {
-      toggleAllCvText.textContent = anyClosed ? 'Lukk alle seksjoner' : 'Åpne alle seksjoner';
+      toggleAllCvText.textContent = allOpen ? 'Lukk alle seksjoner' : 'Åpne alle seksjoner';
     }
-    toggleAllCvBtn.setAttribute('aria-expanded', String(anyClosed));
+    toggleAllCvBtn.setAttribute('aria-expanded', String(allOpen));
+  }
+
+  // Lytt på native toggle-event på hver accordion slik at knappens tilstand ALLTID er 100% synkronisert
+  cvAccordions.forEach((acc) => {
+    acc.addEventListener('toggle', updateToggleAllBtnState);
+  });
+
+  updateToggleAllBtnState();
+
+  toggleAllCvBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const allOpen = cvAccordions.every((acc) => acc.open);
+    const targetState = !allOpen;
+
+    cvAccordions.forEach((acc) => {
+      acc.open = targetState;
+    });
+
+    updateToggleAllBtnState();
   });
 
   // Initier behagelig scroll reveal
@@ -606,8 +623,9 @@ function initScrollReveal() {
     return;
   }
 
+  // Merk: .cv-accordion holdes utenfor reveal-on-scroll slik at interaktive elementer aldri blokkeres
   const revealTargets = document.querySelectorAll(
-    '.service-card, .project-card, .competency-box, .cv-accordion, .contact-page-info, .contact-form-card, .narrative-block, .project-deliverables-box, .project-cta-banner'
+    '.service-card, .project-card, .competency-box, .contact-page-info, .contact-form-card, .narrative-block, .project-deliverables-box, .project-cta-banner'
   );
 
   revealTargets.forEach((el) => {

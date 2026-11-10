@@ -1354,12 +1354,20 @@ body.menu-open {
   padding: 0.5rem 1.15rem;
   border-radius: var(--radius-pill);
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
-.cv-toolbar__btn:hover {
-  background-color: rgb(86 88 82 / 0.38);
-  border-color: var(--text-muted);
+.cv-toolbar__btn > * {
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .cv-toolbar__btn:hover {
+    background-color: rgb(86 88 82 / 0.38);
+    border-color: var(--text-muted);
+  }
 }
 
 .cv-toolbar__btn:focus-visible {
@@ -1396,15 +1404,23 @@ body.menu-open {
   list-style: none;
   min-height: 64px;
   user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: background-color 0.2s ease;
+}
+
+.cv-accordion__summary > * {
+  pointer-events: none;
 }
 
 .cv-accordion__summary::-webkit-details-marker {
   display: none;
 }
 
-.cv-accordion__summary:hover {
-  background-color: var(--bg-card-hover);
+@media (hover: hover) {
+  .cv-accordion__summary:hover {
+    background-color: var(--bg-card-hover);
+  }
 }
 
 .cv-accordion__summary:focus-visible {
