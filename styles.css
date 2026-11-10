@@ -2269,6 +2269,14 @@ body.menu-open {
     border-bottom: none;
   }
 
+  .hero {
+    border-bottom: none;
+  }
+
+  .client-strip {
+    border-bottom: none;
+  }
+
   .header-nav {
     display: none !important;
   }
@@ -2307,7 +2315,8 @@ body.menu-open {
   /* Hero-seksjon på mobil */
   .hero {
     padding-top: 1.75rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: none;
   }
 
   .hero-badge {
@@ -2378,8 +2387,10 @@ body.menu-open {
 
   /* Oppdragsgiver-stripe */
   .client-strip {
-    padding-block: 1.35rem;
+    padding-top: 0.75rem;
+    padding-bottom: 2rem;
     background-color: transparent;
+    border-bottom: none;
   }
 
   .client-strip__label {
