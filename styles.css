@@ -2195,6 +2195,10 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .client-strip {
+    background-color: transparent;
+  }
+
   .client-strip__inner {
     flex-direction: column;
     align-items: flex-start;
@@ -2210,7 +2214,7 @@ body.menu-open {
   .client-strip__item {
     font-size: 0.88rem;
     padding: 0.4rem 0.85rem;
-    background-color: rgb(86 88 82 / 0.18);
+    background-color: transparent;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-pill);
     color: var(--text-secondary);
@@ -2375,6 +2379,7 @@ body.menu-open {
   /* Oppdragsgiver-stripe */
   .client-strip {
     padding-block: 1.35rem;
+    background-color: transparent;
   }
 
   .client-strip__label {
@@ -2388,6 +2393,7 @@ body.menu-open {
   .client-strip__item {
     font-size: 0.82rem;
     padding: 0.3rem 0.7rem;
+    background-color: transparent;
   }
 
   /* Seksjonsoverskrifter */
