@@ -327,7 +327,9 @@ function navigateToRoute(route, { pushHash = true, initial = false } = {}) {
     }
   }
 
-  if (initial || !document.startViewTransition) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (initial || prefersReducedMotion || !document.startViewTransition) {
     applyViewDOM(route);
     if (!initial) {
       focusActiveViewHeading(route.view);
@@ -335,13 +337,23 @@ function navigateToRoute(route, { pushHash = true, initial = false } = {}) {
     return;
   }
 
-  const transition = document.startViewTransition(() => {
-    applyViewDOM(route);
-  });
+  try {
+    const transition = document.startViewTransition(() => {
+      applyViewDOM(route);
+    });
 
-  transition.finished.finally(() => {
+    // Sikre at eventuelle avbrutte overganger (f.eks. endring i viewport-størrelse,
+    // mobilrotering eller rask navigering) ikke kaster ubehandlede promise-feil i konsollen.
+    transition.ready?.catch(() => {});
+    transition.finished
+      .catch(() => {})
+      .finally(() => {
+        focusActiveViewHeading(route.view);
+      });
+  } catch {
+    applyViewDOM(route);
     focusActiveViewHeading(route.view);
-  });
+  }
 }
 
 function navigateToHash(hash, options = {}) {
@@ -369,10 +381,18 @@ function filterProjects(category) {
     });
   };
 
-  if (!document.startViewTransition) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion || !document.startViewTransition) {
     applyFilter();
   } else {
-    document.startViewTransition(() => applyFilter());
+    try {
+      const transition = document.startViewTransition(() => applyFilter());
+      transition.ready?.catch(() => {});
+      transition.finished?.catch(() => {});
+    } catch {
+      applyFilter();
+    }
   }
 }
 
