@@ -10,20 +10,20 @@ const CASE_STUDIES = {
     role: 'Interaksjonsdesigner',
     title: 'Felles datakatalog & Digital gravferdsmelding',
     summary:
-      'Brukersentrert redesign og utvikling av nasjonale fellesløsninger for deling av offentlige data og livshendelsen «Dødsfall og arv».',
+      'Brukersentrert redesign og utvikling av nasjonale fellesløsninger for deling av offentlige data.',
     challenge:
-      'Offentlige og private virksomheter trengte en oversiktlig måte å dele og registrere datasett og begreper i tråd med EU-krav (DCAT-AP-NO / SKOS-AP-NO). Samtidig krevde livshendelsen «Dødsfall og arv» en skjemaløsning i Altinn som minimerer kognitiv belastning for etterlatte i en krevende livssituasjon.',
+      'Offentlige og private virksomheter trengte en oversiktlig måte å dele og registrere datasett og begreper i tråd med EU-krav. Samtidig krevde digital gravferdsmelding en skjemaløsning i Altinn som minimerer kognitiv belastning for etterlatte i en krevende livssituasjon.',
     solution:
       'Gjennomførte innsiktsarbeid, brukertester og iterativ prototyping i Figma basert på Digdirs designsystem og strenge krav til universell utforming (WCAG). Utformet ny forside for data.norge.no, virksomhetsintern begrepskatalog i samarbeid med Skatteetaten og Brønnøysundregistrene, samt nytt gravferdsskjema i Altinn og informasjonsside for Statsforvalteren.',
     result:
       'En produksjonssatt registreringsløsning og begrepskatalog som forenkler tverretatlig datadeling, samt mer empatiske, oversiktlige og brukervennlige tjenester for innbyggere ved gravferd.',
     deliverables: [
       'Innsikt, behovsanalyse og brukertesting',
+      'Prototyper og skjemaflyt i Altinn for Digital gravferdsmelding',
       'Konsept og redesign av data.norge.no',
       'Registreringsløsning og virksomhetsintern begrepskatalog',
-      'Prototyper og skjemaflyt i Altinn for Digital gravferdsmelding',
       'Informasjonsside om gravferd for Statsforvalteren i Vestfold og Telemark',
-      'Designsystem-komponenter og universell utforming'
+      'Designsystem og universell utforming'
     ],
     tags: ['Offentlig sektor', 'Interaksjonsdesign', 'Universell utforming', 'Designsystem', 'Innsikt'],
     images: [
@@ -37,7 +37,7 @@ const CASE_STUDIES = {
     id: 'around',
     client: 'Around',
     year: '2025 – d.d.',
-    role: 'Konseptutvikler & UX designer',
+    role: 'Konseptutvikler & digital produktdesigner',
     title: 'Design og AI drevet utvikling av smart kommunikasjonsplattform',
     summary:
       'Fra idé og visuell identitet til interaktiv prototype og fungerende MVP for en rolig, personvernvennlig gruppechattjeneste uten støy og algoritmer.',
@@ -145,24 +145,24 @@ const CASE_STUDIES = {
     id: 'gapper',
     client: 'Gapper & Ultra Training Inc.',
     year: '2020 – 2025',
-    role: 'Interaksjonsdesigner og designansvarlig',
-    title: 'Digitale booking og treningsplattformer (web, mobil og TV-app)',
+    role: 'Interaksjonsdesigner og digital produktdesigner',
+    title: 'Digitale booking og treningsplattformer',
     summary:
-      'Designledelse, visuell identitet og brukergrensesnitt for skalerbare markedsplasser innen booking (Gapper) og personlig trening (Ultra Training).',
+      'Produktdesign, visuell identitet og brukergrensesnitt for skalerbare markedsplasser innen booking og personlig trening.',
     challenge:
       'Både Gapper (formidling av ledige og avbestilte timer hos bedrifter) og Ultra Training (global plattform for personlige trenere) trengte gjennomarbeidede brukerreiser, høy konvertering og tydelige merkevarer på tvers av mobil, web og TV.',
     solution:
-      'Ledet designprosessene etter Double Diamond-metodikk i tett samarbeid med utviklere og forretningsutviklere. Utviklet personas, brukerreiser, komplette designsystemer og interaktive prototyper i Figma med fokus på universell utforming, samt full visuell identitet.',
+      'Ledet designprosessene i tett samarbeid med utviklere og forretningsutviklere. Utviklet personas, brukerreiser og interaktive prototyper i Figma med fokus på universell utforming, samt full visuell identitet.',
     result:
       'Solide produktkonsepter og prototyper kontinuerlig raffinert gjennom tilbakemeldinger fra pilotkunder og sluttbrukere.',
     deliverables: [
-      'Designledelse og Double Diamond-prosess',
+      'Produktdesign og designprosess',
       'UX/UI-design for web, mobilapp og Apple TV / Smart-TV',
-      'Designsystem, komponenter og universell utforming',
+      'Designsystem og universell utforming',
       'Visuell identitet, logo, fargepalett og presentasjonsmateriell',
       'Forretningsutvikling, personas og markedsføringsmateriell'
     ],
-    tags: ['Produktutvikling', 'Designledelse', 'UX/UI', 'Designsystem', 'Double Diamond'],
+    tags: ['Produktutvikling', 'Produktdesign', 'UX/UI', 'Designsystem', 'Visuell identitet'],
     images: [
       { src: 'assets/images/gapper-desktop.jpg', alt: 'Gapper bookingplattform på desktop' },
       { src: 'assets/images/ultra-laptop.jpg', alt: 'Ultra Training plattform på laptop' },
@@ -378,6 +378,9 @@ function filterProjects(category) {
       const show = category === 'alle' || cats.includes(category);
       card.hidden = !show;
       card.style.display = show ? 'flex' : 'none';
+      if (show) {
+        card.classList.add('is-revealed');
+      }
     });
   };
 
@@ -617,6 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------------------------------------------------------------- */
 
 let scrollRevealObserver = null;
+let bottomScrollListenerAttached = false;
 
 function initScrollReveal() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -625,11 +629,21 @@ function initScrollReveal() {
 
   // Merk: .cv-accordion holdes utenfor reveal-on-scroll slik at interaktive elementer aldri blokkeres
   const revealTargets = document.querySelectorAll(
-    '.service-card, .project-card, .competency-box, .contact-page-info, .contact-form-card, .narrative-block, .project-deliverables-box, .project-cta-banner'
+    '#view-forside .section-header, .service-card, .project-card, .competency-box, .contact-card, .narrative-block, .project-deliverables-box, .project-cta-banner'
   );
 
   revealTargets.forEach((el) => {
     el.classList.add('reveal-on-scroll');
+  });
+
+  // Legg til subtil stagger i 2-kolonne rutenett slik at kortene glir inn sekvensielt
+  document.querySelectorAll('.services-grid, .projects-grid, .contact-methods-grid').forEach((grid) => {
+    Array.from(grid.children).forEach((child, idx) => {
+      if (child.classList.contains('reveal-on-scroll')) {
+        const delayMs = (idx % 2) * 140;
+        child.style.setProperty('--reveal-delay', `${delayMs}ms`);
+      }
+    });
   });
 
   if (scrollRevealObserver) {
@@ -647,12 +661,33 @@ function initScrollReveal() {
     },
     {
       root: null,
-      threshold: 0.08,
-      rootMargin: '0px 0px -30px 0px',
+      threshold: 0.14,
+      rootMargin: '0px 0px -14% 0px',
     }
   );
 
   revealTargets.forEach((el) => scrollRevealObserver.observe(el));
+
+  if (!bottomScrollListenerAttached) {
+    bottomScrollListenerAttached = true;
+    window.addEventListener(
+      'scroll',
+      () => {
+        const nearBottom =
+          window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
+        if (nearBottom) {
+          document
+            .querySelectorAll('.view.is-active .reveal-on-scroll:not(.is-revealed)')
+            .forEach((el) => {
+              el.classList.add('is-revealed');
+              scrollRevealObserver?.unobserve(el);
+            });
+        }
+      },
+      { passive: true }
+    );
+  }
+
   revealVisibleElementsInActiveView();
 }
 
@@ -661,8 +696,11 @@ function revealVisibleElementsInActiveView() {
   if (!activeView) return;
   activeView.querySelectorAll('.reveal-on-scroll').forEach((el) => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 50) {
+    // Pre-reveal kun elementer som allerede er tydelig innenfor synsfeltet,
+    // ikke elementer som venter nederst eller under folden.
+    if (rect.top < window.innerHeight * 0.84) {
       el.classList.add('is-revealed');
+      scrollRevealObserver?.unobserve(el);
     }
   });
 }

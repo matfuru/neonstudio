@@ -574,16 +574,21 @@ body.menu-open {
 }
 
 /* Scroll- og innlastingsanimasjon (Reveal) */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.85s var(--ease-out-expo), transform 0.85s var(--ease-out-expo);
-  will-change: opacity, transform;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translate3d(0, 48px, 0) scale(0.96);
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+      transform 0.95s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
 
-.reveal-on-scroll.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    will-change: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -593,18 +598,24 @@ body.menu-open {
     animation: none !important;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .site-header,
+  .hero::before,
+  .hero-badge,
+  .hero-badge__dot,
+  .hero-title,
+  .hero-lead,
+  .hero-actions,
+  .hero-meta-card,
+  .client-strip,
+  .mobile-menu__backdrop,
+  .mobile-menu__panel {
+    animation: none !important;
   }
 
   .reveal-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .btn:hover,
@@ -621,11 +632,11 @@ body.menu-open {
 @keyframes heroFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translate3d(0, 32px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -780,7 +791,12 @@ body.menu-open {
 
 .hero-meta-card__role {
   font-size: 0.85rem;
+  line-height: 1.45;
   color: var(--text-muted);
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .hero-meta-card__quote {
@@ -1020,6 +1036,11 @@ body.menu-open {
   color: var(--text-primary);
   line-height: 1.25;
   letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.title-break {
+  display: block;
 }
 
 .project-card__desc {
@@ -1871,15 +1892,16 @@ body.menu-open {
 }
 
 .project-deliverables-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem 3rem;
+  columns: 2;
+  column-gap: 3rem;
   margin-top: 1.5rem;
 }
 
 .project-deliverables-list li {
   position: relative;
   padding-left: 1.6rem;
+  margin-bottom: 0.9rem;
+  break-inside: avoid;
   font-size: 1.04rem;
   color: var(--text-secondary);
   line-height: 1.65;
@@ -2272,7 +2294,7 @@ body.menu-open {
   }
 
   .project-deliverables-list {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
 
